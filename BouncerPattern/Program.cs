@@ -10,10 +10,11 @@ class BouncerPattern
     static void Method(object o)
     {
         if (o is null) throw new ArgumentException(nameof(o));
-        if (o is Point p)
-        {
-            // implement method here
-        }
-        else throw new ArgumentException("Not a Point", nameof(p));
+        if (!(o is Point p)) throw new ArgumentException("Not a Point", nameof(p));
+
+        // pattern expressions have a broader scope than normal
+        // we can use p below!
+
+        WriteLine($"Initial Coordinates: X {p.X}; Y: {p.Y}");
     }
 }
