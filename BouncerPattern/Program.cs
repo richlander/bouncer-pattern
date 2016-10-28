@@ -16,5 +16,12 @@ class BouncerPattern
         // we can use p below!
 
         WriteLine($"Initial Coordinates: X {p.X}; Y: {p.Y}");
+
+        // A related feature is called "out vars"
+        // no longer need to declare out variables before the method
+        // the scope is broad, too, so you can use them below
+        p.GetCoordinates(out var x, out var y);
+
+        WriteLine($"Initial Coordinates: X {p.X}; Y: {p.Y}");
     }
 }
